@@ -7,7 +7,7 @@ function newImage(image, srcString, leftPosition, bottomPosition) {
     image.style.bottom = bottomPosition
     document.body.append(image)
 
-    // return image
+    return image
 }
 
 //invoking Assets to Screen
@@ -32,13 +32,8 @@ newImage('well', 'assets/well.png', '500px', '425px')
 
 //Items Function
 
-function newItem(item, srcString, posLeft, posBottom) {
-    item = document.createElement('img')
-    item.src = srcString
-    item.style.position = 'fixed'
-    item.style.left = posLeft
-    item.style.bottom = posBottom
-    document.body.append(item)
+function newItem(item, srcStr, posLeft, posBottom) {
+    item = newImage(item, srcStr, posLeft, posBottom)
 
     item.addEventListener('dblclick', function(){
         item.remove()
